@@ -1,0 +1,5 @@
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.0.0"
+version_scheme = "semver"
+tag_format = "$version"
