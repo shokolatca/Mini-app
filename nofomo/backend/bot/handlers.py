@@ -5,7 +5,7 @@ import os
 
 router = Router()
 
-def web_app_keyboard(web_app_url):
+def web_app_keyboard(web_app_url: str):
     button = KeyboardButton(
         text="Открыть Web App",
         web_app=WebAppInfo(url=web_app_url)
@@ -18,7 +18,7 @@ def web_app_keyboard(web_app_url):
 
 @router.message(CommandStart())
 async def send_welcome(message: Message):
-    web_app_url = os.getenv('WEBAPP_URL')
+    web_app_url = os.getenv("WEBAPP_URL")
     if not web_app_url:
         await message.answer("Ошибка: WEBAPP_URL не задан.")
         return

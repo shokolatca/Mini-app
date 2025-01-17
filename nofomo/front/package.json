@@ -1,0 +1,17 @@
+{
+    "name": "telegram-webapp",
+    "version": "1.0.0",
+    "description": "Telegram Web App для интеграции с ботом",
+    "main": "dist/main.js",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "serve": "vite preview"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "typescript": "^5.2.2",
+      "vite": "^4.3.9"
+    }
+  }
+  
