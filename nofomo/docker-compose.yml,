@@ -1,0 +1,33 @@
+services:
+  db:
+    image: mysql:8
+    container_name: db
+    env_file:
+      - .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  app:
+    build: .
+    container_name: app
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    command: gunicorn backend.server:app -k uvicorn.workers.UvicornWorker -w 4 -b 0.0.0.0:8000
+    volumes:
+      - .:/app
+
+volumes:
+  db_data:
