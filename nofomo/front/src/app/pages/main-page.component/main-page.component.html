@@ -1,0 +1,39 @@
+<div class="profile-container">
+    <header>
+      <div class="language">EN</div>
+      <h1>MY PROFILE</h1>
+      <div class="telegram-icon">✈️</div>
+    </header>
+  
+    <div class="profile-info">
+      <div class="avatar"></div>
+      <h2>{{ user.username }}</h2>
+      <span class="user-id">{{ user.userId }}</span>
+      <button class="invite-btn" (click)="invite()">INVITE</button>
+      <p class="invite-text">get 20% from referral purchase</p>
+    </div>
+  
+    <div class="details">
+      <div class="detail-row">
+        <span>Referrals</span>
+        <b>{{ user.referrals }}</b>
+      </div>
+      <div class="detail-row">
+        <span>Balance</span>
+        <b>{{ user.balance }}</b>
+      </div>
+      <hr />
+      <div class="menu-item" (click)="toggleEdit()">Story</div>
+      <div class="menu-item" (click)="toggleEdit()">Feedback</div>
+      <div class="menu-item" (click)="toggleEdit()">Our channel</div>
+    </div>
+  
+    <footer>
+      <div class="menu-icons">
+        <span>🔲</span>
+        <span>🏠</span>
+        <span>👤</span>
+      </div>
+    </footer>
+  </div>
+  

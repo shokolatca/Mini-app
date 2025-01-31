@@ -1,0 +1,42 @@
+<div class="shop-container">
+    <header>
+      <div class="language">EN</div>
+      <h1>SHOP</h1>
+      <div class="telegram-icon">✈️</div>
+    </header>
+  
+    <div class="shop-content">
+      <h2>NOTCOIN</h2>
+  
+      <div class="input-group">
+        <label>Введите кол-во аккаунтов</label>
+        <input type="number" [(ngModel)]="shopForm.controls['accounts'].value">
+      </div>
+  
+      <div class="input-group">
+        <label>Срок (мес)</label>
+        <input type="number" [(ngModel)]="shopForm.controls['duration'].value">
+      </div>
+  
+      <div class="input-group checkbox">
+        <label>Наличие тг аккаунтов</label>
+        <input type="checkbox" [(ngModel)]="shopForm.controls['hasTelegramAccounts'].value">
+      </div>
+  
+      <div class="price">
+        <h3>Стоимость</h3>
+        <span>{{ totalPrice }} $</span>
+      </div>
+  
+      <button class="pay-btn" (click)="makePayment()">Оплатить</button>
+    </div>
+  
+    <footer>
+      <div class="menu-icons">
+        <span>🔲</span>
+        <span>🏠</span>
+        <span>👤</span>
+      </div>
+    </footer>
+  </div>
+  
